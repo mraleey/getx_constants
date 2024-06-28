@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getx_constants/constants/fonts.dart';
+import 'package:getx_constants/view/animation.dart';
 import 'package:getx_constants/view_models/splash_services.dart';
 
 
@@ -26,9 +27,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Image(image: AssetImage('images/support.png')),
+            const Image(image: AssetImage('images/user.png')),
             const SizedBox(height: 20),
-            const CircularProgressIndicator(),
+            const AnimatedBar(),
             const SizedBox(height: 20),
             const Text('Loading...'),
             const SizedBox(height: 20),

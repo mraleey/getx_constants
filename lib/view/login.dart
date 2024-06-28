@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx_constants/constants/colors.dart';
 import 'package:getx_constants/constants/fonts.dart';
 import 'package:getx_constants/constants/textfield.dart';
-import 'package:getx_constants/view_models/login_controller.dart';
+import 'package:getx_constants/controller/login_controller.dart';
 import 'package:getx_constants/constants/button.dart';
 
 class LogInView extends StatelessWidget {

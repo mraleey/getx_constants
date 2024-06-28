@@ -4,10 +4,7 @@ import 'package:get/get.dart';
 import 'package:getx_constants/constants/button.dart';
 import 'package:getx_constants/constants/colors.dart';
 import 'package:getx_constants/constants/fonts.dart';
-import 'package:getx_constants/view/admin/dashboard/dashboard.dart';
-import 'package:getx_constants/view/admin/database/database_restore.dart';
-import 'package:getx_constants/view/admin/tickets/ticket_home.dart';
-import 'package:getx_constants/view/admin/invoices/navigations/invoice_home.dart';
+import 'package:getx_constants/view/login.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -21,10 +18,10 @@ class _HomeViewState extends State<HomeView> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    DashboardView(),
-    TicketHomeView(),
-    InvoiceBottomNavigationBar(),
-    const DatabaseRestore()
+  LogInView(),
+  LogInView(),
+  LogInView(),
+  LogInView(),
   ];
 
   void _onItemTapped(int index) {
