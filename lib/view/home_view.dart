@@ -14,7 +14,7 @@ class HomeView extends StatelessWidget {
   final HomeController _controller = Get.put(HomeController());
 
   static final List<Widget> _widgetOptions = <Widget>[
-    const PageOne(),
+    PageOne(),
     const PageTwo()
   ];
 
@@ -83,7 +83,7 @@ class HomeView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Team App',
+                'Getx Constants',
                 style: TextStyle(
                   color: AppColor.white,
                   fontWeight: FontWeight.bold,

@@ -1,5 +1,5 @@
 class AppUrls {
-  static const String baseUrl = "https://apicrm.cgacnt.com/api_companycrm/";
+  static const String baseUrl = "https://dummyjson.com/auth/";
 
-  static const String loginUrl = "user_login.php";
+  static const String loginUrl = "/login";
 }

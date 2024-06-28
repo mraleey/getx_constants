@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:getx_constants/constants/colors.dart';
 import 'package:getx_constants/repository/login_repository.dart';
 import 'package:getx_constants/view/home_view.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginController extends GetxController {
   final emailController = TextEditingController();
@@ -15,9 +14,6 @@ class LoginController extends GetxController {
   final passwordFocus = FocusNode();
   final isPasswordVisible = true.obs;
   final isLoading = false.obs;
-  final username = ''.obs;
-  final deviceToken = ''.obs;
-  final deviceId = ''.obs;
   final name = ''.obs;
 
   RxList<dynamic> partyData = [].obs;
@@ -47,25 +43,15 @@ class LoginController extends GetxController {
     try {
       toggleLoading();
       var jsonData = jsonEncode(data);
+      print("jsonData: $jsonData");
       Response response = await loginRepository.postLoginData(jsonData);
+      print("Link : ${response.request?.url}");
+      print(
+          "Response: ${response.body} statusCode: ${response.statusCode} data: $jsonData");
       if (response.statusCode == 200) {
-        Map<String, dynamic> responseBody = jsonDecode(response.body);
-        name.value = responseBody['LOGINDATA']['NAME'].toString();
-        username.value = responseBody['LOGINDATA']['USERNAME'].toString();
-        int type = responseBody['LOGINDATA']['TYPE'] as int;
-
-        SharedPreferences sharedPreferences =
-            await SharedPreferences.getInstance();
-        sharedPreferences.setString("NAME", name.value);
-        sharedPreferences.setString("USERNAME", username.value);
-        sharedPreferences.setInt("TYPE", type);
-        sharedPreferences.setString("token", deviceToken.toString());
-
         emailController.clear();
         passwordController.clear();
-        if (type == 2 || type == 0) {
-          Get.to( HomeView());
-        }
+        Get.to(HomeView());
 
         return true;
       } else {
@@ -103,6 +89,4 @@ class LoginController extends GetxController {
   void clearUserInfo() {
     loginRepository.clearUserInfo();
   }
-
-  void generateTicket() {}
 }

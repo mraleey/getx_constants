@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_constants/constants/button.dart';
 import 'package:getx_constants/constants/fonts.dart';
+import 'package:getx_constants/controller/login_controller.dart';
+import 'package:getx_constants/view/login.dart';
 
 class PageOne extends StatelessWidget {
-  const PageOne({super.key});
+  final LoginController loginController =
+      Get.put(LoginController(loginRepository: Get.find()));
+  PageOne({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +33,17 @@ class PageOne extends StatelessWidget {
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
+        ),
+        const SizedBox(height: 20),
+        CustomButton(
+          title: "Log Out",
+          onPressed: () {
+            loginController.isLogin(false);
+            Get.offAll(LogInView());
+          },
+          isLoading: false,
+          width: Get.width * 0.3,
+          height: Get.height * 0.05,
         ),
       ],
     );

@@ -21,7 +21,7 @@ class LogInView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Team App',
+              'Getx Costants',
               style: TextStyle(
                 color: AppColor.white,
                 fontWeight: FontWeight.bold,
@@ -35,8 +35,10 @@ class LogInView extends StatelessWidget {
                   height: Get.height * 0.05,
                   width: Get.width * 0.05,
                 ),
+                SizedBox(width: Get.width * 0.02),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Powered By:",
@@ -47,7 +49,7 @@ class LogInView extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "@SolutionExperts",
+                      "@mraleey",
                       style: TextStyle(
                         color: AppColor.white,
                         fontWeight: FontWeight.bold,
@@ -110,10 +112,9 @@ class LogInView extends StatelessWidget {
                   title: "LogIn",
                   onPressed: () {
                     loginController.postLoginData({
-                      "USERNAME": loginController.emailController.text.trim(),
-                      "PASSCODE":
+                      "username": loginController.emailController.text.trim(),
+                      "password":
                           loginController.passwordController.text.trim(),
-                      "DEVICE_ID": ""
                     }).then(
                       (value) {
                         if (value == true) {
