@@ -13,7 +13,7 @@ class SplashServices {
         int? type = sharedPreferences.getInt('TYPE');
 
         if (type == 2 || type == 0) {
-          Get.to(() => const HomeView());
+          Get.to(() =>  HomeView());
         } else {
           Get.off(() => LogInView());
         }

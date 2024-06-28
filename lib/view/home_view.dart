@@ -4,31 +4,19 @@ import 'package:get/get.dart';
 import 'package:getx_constants/constants/button.dart';
 import 'package:getx_constants/constants/colors.dart';
 import 'package:getx_constants/constants/fonts.dart';
-import 'package:getx_constants/view/login.dart';
+import 'package:getx_constants/controller/home_controller.dart';
+import 'package:getx_constants/view/home/page_one.dart';
+import 'package:getx_constants/view/home/page_two.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class HomeView extends StatelessWidget {
+  HomeView({super.key});
 
-  @override
-  // ignore: library_private_types_in_public_api
-  _HomeViewState createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-  int _selectedIndex = 0;
+  final HomeController _controller = Get.put(HomeController());
 
   static final List<Widget> _widgetOptions = <Widget>[
-  LogInView(),
-  LogInView(),
-  LogInView(),
-  LogInView(),
+    const PageOne(),
+    const PageTwo()
   ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
 
   Future<bool> showExitConfirmationSnackbar() async {
     Get.snackbar(
@@ -109,11 +97,13 @@ class _HomeViewState extends State<HomeView> {
                     height: Get.height * 0.05,
                     width: Get.width * 0.05,
                   ),
+                  SizedBox(width: Get.width * 0.02),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Powered By:",
+                        "Powered By",
                         style: TextStyle(
                           color: AppColor.white,
                           fontWeight: FontWeight.bold,
@@ -121,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ),
                       Text(
-                        "@SolutionExperts",
+                        "@mraleey",
                         style: TextStyle(
                           color: AppColor.white,
                           fontWeight: FontWeight.bold,
@@ -137,30 +127,24 @@ class _HomeViewState extends State<HomeView> {
           centerTitle: true,
           elevation: 0,
         ),
-        body: _widgetOptions[_selectedIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: AppColor.primaryTheme,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: AppColor.white,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard),
-              label: 'Dashboard',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Tickets',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.money_off),
-              label: 'Invoices',
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.restore), label: 'Database')
-          ],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-        ),
+        body: Obx(() => _widgetOptions[_controller.selectedIndex.value]),
+        bottomNavigationBar: Obx(() => BottomNavigationBar(
+              backgroundColor: AppColor.primaryTheme,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: AppColor.white,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Page One',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.business),
+                  label: 'Page Two',
+                ),
+              ],
+              currentIndex: _controller.selectedIndex.value,
+              onTap: _controller.onItemTapped,
+            )),
       ),
     );
   }

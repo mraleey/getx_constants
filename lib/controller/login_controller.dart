@@ -64,7 +64,7 @@ class LoginController extends GetxController {
         emailController.clear();
         passwordController.clear();
         if (type == 2 || type == 0) {
-          Get.to(const HomeView());
+          Get.to( HomeView());
         }
 
         return true;
