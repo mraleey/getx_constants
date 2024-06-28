@@ -1,5 +1,5 @@
 
-import 'package:getx_constants/common/data/responses/status.dart';
+import 'package:getx_constants/data/responses/status.dart';
 
 class ApiResponse<T> {
   Status? status;

@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:getx_constants/constants/colors.dart';
-import 'package:getx_constants/common/data/app_urls.dart';
+import 'package:getx_constants/data/app_urls.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../common/data/api/api_client.dart';
+import '../data/api/api_client.dart';
 
 class LoginRepository extends GetxService {
   ApiClient apiClient;

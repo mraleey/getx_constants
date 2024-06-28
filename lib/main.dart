@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_constants/common/data/helper/dependencies.dart'
+import 'package:getx_constants/data/helper/dependencies.dart'
     as dependencies;
 import 'package:getx_constants/view/splash_screen.dart';
 

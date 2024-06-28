@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:getx_constants/controller/login_controller.dart';
-import 'package:getx_constants/common/data/app_urls.dart';
+import 'package:getx_constants/data/app_urls.dart';
 import 'package:getx_constants/repository/login_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

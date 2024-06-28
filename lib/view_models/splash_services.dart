@@ -10,13 +10,7 @@ class SplashServices {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     if (sharedPreferences.getBool('isLogin') ?? false) {
       Timer(const Duration(seconds: 5), () {
-        int? type = sharedPreferences.getInt('TYPE');
-
-        if (type == 2 || type == 0) {
-          Get.to(() =>  HomeView());
-        } else {
-          Get.off(() => LogInView());
-        }
+        Get.to(() => HomeView());
       });
     } else {
       Timer(const Duration(seconds: 3), () {
