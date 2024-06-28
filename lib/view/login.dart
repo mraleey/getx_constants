@@ -112,7 +112,7 @@ class LogInView extends StatelessWidget {
                   title: "LogIn",
                   onPressed: () {
                     loginController.postLoginData({
-                      "username": loginController.emailController.text.trim(),
+                      "email": loginController.emailController.text.trim(),
                       "password":
                           loginController.passwordController.text.trim(),
                     }).then(

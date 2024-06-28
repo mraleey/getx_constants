@@ -23,7 +23,7 @@ class CustomDropdownMenu extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColor.white,
         border: Border.all(
-          color: AppColor.partyprimaryColor,
+          color: AppColor.primaryTheme,
           width: 1.0,
         ),
         borderRadius: BorderRadius.circular(8.0),

@@ -21,7 +21,7 @@ class LoginRepository extends GetxService {
 
   Future<void> saveLoginInfo(String username, String password) async {
     try {
-      await sharedPreferences.setString("username", username);
+      await sharedPreferences.setString("email", username);
       await sharedPreferences.setString("password", password);
     } catch (e) {
       Get.snackbar(

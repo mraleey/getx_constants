@@ -8,18 +8,6 @@ class AppColor {
   static const secondaryTheme = Color(0xFFd9ed92);
   static const secondaryThemeLight = Color(0xFFb5e48c);
   static const secondaryThemeDark = Color(0xFF99d98c);
-//Cards Color
-  static const Color newCardColor = Color(0xFF084c61);
-  static const Color closedCardColor = Color(0xFF2d728f);
-  static const Color previousCardColor = Color(0xFFf7b267);
-  static const Color pendingCardColor = Color(0xFFdb3a34);
-
-  //Party Colors
-  static const Color partyprimaryColor = Color(0xFF3d348b);
-  static const Color partyprimaryColorDark = Color(0xFF7678ed);
-  static const Color partyprimaryColorLight = Color(0xFFf7b801);
-  static const Color partysecondaryColor = Color(0xFFf18701);
-  static const Color partysecondaryColorDark = Color(0xFFf35b04);
 
   //Priority Color
   static const Color highPriorityColor = Color(0xFFdb3a34);

@@ -14,7 +14,6 @@ class LoginController extends GetxController {
   final passwordFocus = FocusNode();
   final isPasswordVisible = true.obs;
   final isLoading = false.obs;
-  final name = ''.obs;
 
   RxList<dynamic> partyData = [].obs;
 
@@ -43,15 +42,15 @@ class LoginController extends GetxController {
     try {
       toggleLoading();
       var jsonData = jsonEncode(data);
-      print("jsonData: $jsonData");
       Response response = await loginRepository.postLoginData(jsonData);
-      print("Link : ${response.request?.url}");
-      print(
-          "Response: ${response.body} statusCode: ${response.statusCode} data: $jsonData");
       if (response.statusCode == 200) {
+        saveLoginInfo(
+            emailController.text.trim(), passwordController.text.trim());
+        isLogin(true);
+
+        Get.to(HomeView());
         emailController.clear();
         passwordController.clear();
-        Get.to(HomeView());
 
         return true;
       } else {

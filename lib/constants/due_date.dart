@@ -29,7 +29,7 @@ class CustomDueDatePicker extends StatelessWidget {
             return Theme(
               data: ThemeData.light().copyWith(
                 colorScheme: const ColorScheme.light(
-                  primary: AppColor.partyprimaryColor,
+                  primary: AppColor.primaryTheme,
                 ),
               ),
               child: child!,
@@ -48,9 +48,9 @@ class CustomDueDatePicker extends StatelessWidget {
           controller: dateController,
           labelText: hintText,
           prefixIcon: Icons.event,
-          prefixIconColor: AppColor.partyprimaryColorDark,
-          labelColor: AppColor.partyprimaryColorDark,
-          borderColor: AppColor.partyprimaryColorDark,
+          prefixIconColor: AppColor.primaryTheme,
+          labelColor: AppColor.primaryTheme,
+          borderColor: AppColor.primaryTheme,
         ),
       ),
     );

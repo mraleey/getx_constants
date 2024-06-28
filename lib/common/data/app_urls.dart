@@ -1,5 +1,5 @@
 class AppUrls {
-  static const String baseUrl = "https://dummyjson.com/auth/";
+  static const String baseUrl = "https://reqres.in/api";
 
   static const String loginUrl = "/login";
 }
