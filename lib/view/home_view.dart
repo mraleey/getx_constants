@@ -105,7 +105,7 @@ class _HomeViewState extends State<HomeView> {
               Row(
                 children: [
                   Image(
-                    image: const AssetImage("images/support.png"),
+                    image: const AssetImage("images/logo.png"),
                     height: Get.height * 0.05,
                     width: Get.width * 0.05,
                   ),

@@ -31,7 +31,7 @@ class LogInView extends StatelessWidget {
             Row(
               children: [
                 Image(
-                  image: const AssetImage('images/support.png'),
+                  image: const AssetImage('images/logo.png'),
                   height: Get.height * 0.05,
                   width: Get.width * 0.05,
                 ),
@@ -71,7 +71,7 @@ class LogInView extends StatelessWidget {
             children: [
               SizedBox(height: Get.height * 0.1),
               Image.asset(
-                'images/support.png',
+                'images/logo.png',
                 width: 100,
                 height: 100,
               ),
