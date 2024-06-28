@@ -10,7 +10,7 @@ import 'package:getx_constants/view/admin/tickets/ticket_home.dart';
 import 'package:getx_constants/view/admin/invoices/navigations/invoice_home.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
@@ -74,16 +74,17 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       snackStyle: SnackStyle.FLOATING,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       borderRadius: 10,
       isDismissible: true,
-      duration: Duration(minutes: 5),
+      duration: const Duration(minutes: 5),
     );
     return false;
   }
 
   @override
   Widget build(BuildContext context) {
+    // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async {
         bool shouldExit = await showExitConfirmationSnackbar();

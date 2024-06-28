@@ -7,7 +7,7 @@ import 'package:getx_constants/view_models/login_controller.dart';
 import 'package:getx_constants/constants/button.dart';
 
 class LogInView extends StatelessWidget {
-  LogInView({Key? key}) : super(key: key);
+  LogInView({super.key});
 
   final loginController = Get.find<LoginController>();
 

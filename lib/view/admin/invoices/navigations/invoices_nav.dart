@@ -10,7 +10,7 @@ class InvoicesBottomNav extends StatelessWidget {
   final DetailsInvoicesController controller =
       Get.put(DetailsInvoicesController());
 
-  InvoicesBottomNav({Key? key}) : super(key: key);
+  InvoicesBottomNav({super.key});
 
   @override
   Widget build(BuildContext context) {

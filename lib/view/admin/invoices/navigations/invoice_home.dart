@@ -11,7 +11,7 @@ class InvoiceBottomNavigationBar extends StatelessWidget {
   final InvoiceBottomNavigationBarController controller =
       Get.put(InvoiceBottomNavigationBarController());
 
-  InvoiceBottomNavigationBar({Key? key}) : super(key: key);
+  InvoiceBottomNavigationBar({super.key});
 
   @override
   Widget build(BuildContext context) {

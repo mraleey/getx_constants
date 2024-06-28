@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 class PaidInvoicesView extends StatelessWidget {
   final InvoiceDataController invoiceDataController = Get.find();
 
-  PaidInvoicesView({Key? key}) : super(key: key);
+  PaidInvoicesView({super.key});
 
   @override
   Widget build(BuildContext context) {

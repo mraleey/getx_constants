@@ -8,7 +8,7 @@ import 'package:getx_constants/controller/admin/Invoice/invoice_data_controller.
 class InvoiceDashboardView extends StatelessWidget {
   final InvoiceDataController invoiceDataController =
       Get.find<InvoiceDataController>();
-  InvoiceDashboardView({Key? key}) : super(key: key);
+  InvoiceDashboardView({super.key});
 
   @override
   Widget build(BuildContext context) {

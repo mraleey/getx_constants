@@ -6,7 +6,7 @@ import 'package:getx_constants/view/party/dashboard/party_dashboard.dart';
 import 'package:getx_constants/view/party/tickets/party_ticket_home.dart';
 
 class PartyHomeView extends StatefulWidget {
-  const PartyHomeView({Key? key}) : super(key: key);
+  const PartyHomeView({super.key});
 
   @override
   // ignore: library_private_types_in_public_api

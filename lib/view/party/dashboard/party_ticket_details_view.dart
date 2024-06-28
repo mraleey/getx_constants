@@ -10,8 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class PartyTicketDetailsView extends StatelessWidget {
   final PartyTicketType ticketType;
 
-  PartyTicketDetailsView({Key? key, required this.ticketType})
-      : super(key: key);
+  PartyTicketDetailsView({super.key, required this.ticketType});
 
   final PartyDashboardController dashboardController =
       Get.find<PartyDashboardController>();
